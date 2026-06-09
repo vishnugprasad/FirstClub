@@ -22,11 +22,8 @@ services:
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
     envVars:
-      - key: VITE_API_HOST
-        fromService:
-          type: web
-          name: firstclub-membership-api
-          property: host
+      - key: VITE_API_URL
+        value: https://firstclub-membership-api.onrender.com/api/v1
     routes:
       - type: rewrite
         source: /*
